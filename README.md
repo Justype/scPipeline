@@ -5,3 +5,13 @@ The [scPipeline](https://github.com/NMikolajewicz/scPipeline) analysis pipeline 
 To get started with scPipeline, please refer to our [scMiko](https://nmikolajewicz.github.io/scMiko/) and [scPipeline](https://nmikolajewicz.github.io/scMiko/) tutorials.   
 
 if using scPipeline and scMiko, please consider citing our work: [Mikolajewicz, N., Gacesa, R., Aguilera-Uribe, M., Brown, K. R., Moffat, J., & Han, H. (2022). Multi-level cellular and functional annotation of single-cell transcriptomes using scPipeline. Communications Biology, 5(1), 1-14.](https://www.nature.com/articles/s42003-022-04093-2)
+
+## Dependencies
+
+Just use my `renv.lock` file. (works on R 4.4)
+
+```R
+renv::init()
+
+# then restore the environment with renv.lock file
+```
