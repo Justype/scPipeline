@@ -8,10 +8,16 @@ if using scPipeline and scMiko, please consider citing our work: [Mikolajewicz, 
 
 ## Dependencies
 
-Just use my `renv.lock` file. (works on R 4.4)
+- Make sure you have R 4.4 or newer.
+  - Bioconductor 3.19 only works on R 4.4
+  - Certain version of packages only exist in certain version of Bioconductor.
+- Just use my `renv.lock` file.
+- Make sure you have RTools installed if using Windows.
 
 ```R
 renv::init()
 
-# then restore the environment with renv.lock file
+# then select 1: Restore the project from the lockfile.
 ```
+
+You can use [10X PBMC](https://cf.10xgenomics.com/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz) as an example.

@@ -79,14 +79,15 @@ parameter.list <- list(
   species.filter.flag = F,                             
   species.include = "Hs",                    # required; options: Hs, Mm
 
-  # miscillaneous parameters
+  # miscellaneous parameters
   nworkers = 1,
   save.pdf = F,
   print.inline = F,
   developer = F
 )
 
-
+# make output directory
+dir.create(parameter.list$output.object.directory, recursive = T)
 ```
 
 

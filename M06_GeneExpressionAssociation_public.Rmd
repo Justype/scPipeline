@@ -41,6 +41,8 @@ packages2load <- c("scMiko", "Seurat", "plyr",  "dplyr", "tidyr", "reshape2", "g
 # load packages
 invisible(lapply(packages2load, library, character.only = T, quietly = T))
 
+# Use this version of RISmed
+# https://github.com/dcangst/RISmed.git
 ```
 
 
@@ -972,7 +974,7 @@ if (exists("df.cor.list")) {
 ```{r create cor heatmap, include= F}
 
 # fitered correlation matrix
-if ((class(cor.mat.sub) == "matrix") && (dim(cor.mat.sub)[2] > 0)) {
+if ((any((class(cor.mat.sub) == "matrix"))) && (dim(cor.mat.sub)[2] > 0)) {
   
   cor.mat.sub <- cor.mat.sub[ ,!(is.na(apply(cor.mat.sub, 2, function(x) var(x, na.rm = T))))] 
 
