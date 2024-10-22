@@ -2579,6 +2579,18 @@
       ],
       "Hash": "63cb26d12517c7863f5abb006c5e0f25"
     },
+    "fossil": {
+      "Package": "fossil",
+      "Version": "0.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "maps",
+        "shapefiles",
+        "sp"
+      ],
+      "Hash": "40516c0ab0d9da3e1415618e5c95ed3a"
+    },
     "fs": {
       "Package": "fs",
       "Version": "1.6.4",
@@ -3937,6 +3949,18 @@
         "R"
       ],
       "Hash": "7ce2733a9826b3aeb1775d56fd305472"
+    },
+    "maps": {
+      "Package": "maps",
+      "Version": "3.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "graphics",
+        "utils"
+      ],
+      "Hash": "5f7886e53a3b39d4a110c7bd7fce9164"
     },
     "markdown": {
       "Package": "markdown",
@@ -5321,6 +5345,17 @@
         "utils"
       ],
       "Hash": "801bec14b3bae0f37eef4d187ee0bb44"
+    },
+    "shapefiles": {
+      "Package": "shapefiles",
+      "Version": "0.7.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "foreign"
+      ],
+      "Hash": "3dd518413caef24b6d865a1a18477390"
     },
     "shiny": {
       "Package": "shiny",

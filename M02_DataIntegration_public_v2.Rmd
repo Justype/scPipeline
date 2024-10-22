@@ -55,8 +55,8 @@ parameter.list <- list(
   integration.k.weight = 100,                        # number of neighbors to consider when weighting anchor. Default = 100.
   integration.n.genes = 2000,                        # number of genes for integration: 1000-3000 recommended
   integration.method = "rPCA",                       # options: CCA, rPCA
-  integration.limit.memory = T,                      # specify whether to limit max memory
-  integration.max.memory = 150,                      # numeric, in terms of Gb
+  integration.limit.memory = T,                      # specify whether to limit max memory, make sure you set this to TRUE, just adjust max.memory
+  integration.max.memory = 150,                      # numeric, in terms of GB
   integration.cluster.resolution = 0.35, 
   integration.compute.diversity = T,
   pca.var.threshold = 0.9, 
@@ -631,6 +631,10 @@ geneSpecies <-   function(features){
 
 
 ```{r prep data, warning = FALSE, message = FALSE}
+# increase the future.globals.maxSize (500MiB is not enough)
+if (parameter.list$integration.limit.memory) {
+  options(future.globals.maxSize = (parameter.list$integration.max.memory * 1024^3))   
+}
 
 df.species <- data.frame(table(unlist(lapply(input.data, function(x) x$species))))
 dominant.species <- as.character(df.species$Var1[which.max(df.species$Freq)])[1]
@@ -980,7 +984,7 @@ if ((toupper(parameter.list$integration.method) %in% c("CCA", "RPCA")  )){
       plan(strategy = "multisession", workers = parameter.list$n.workers$integration)
     }
     if (parameter.list$integration.limit.memory) {
-      options(future.globals.maxSize = (parameter.list$integration.max.memory*20480/20 * 1024^2))   
+      options(future.globals.maxSize = (parameter.list$integration.max.memory * 1024^3))   
     }
     
     so.n <- unlist(lapply(so.list, ncol))
